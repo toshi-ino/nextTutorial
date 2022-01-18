@@ -21,7 +21,7 @@ export default function Post({ postData }) {
   );
 }
 
-export default async function getStaticPaths() {
+export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
     paths,
@@ -29,7 +29,7 @@ export default async function getStaticPaths() {
   };
 }
 
-export default async function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id.join("/"));
   return {
     props: {
