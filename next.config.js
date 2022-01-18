@@ -1,10 +1,8 @@
 module.exports = {
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.node = {
-        fs: "empty",
-      };
-    }
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.node = {
+      fs: "empty",
+    };
     return config;
   },
 };
