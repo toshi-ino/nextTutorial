@@ -1,3 +1,6 @@
+// cssを適応させる方法はいくつかあるが、cssモジュールを全てのページに適用させるためにはLayoutコンポーネントで全てのページをラップする
+// cssモジュールを使うとcssモジュールを読み込んだファイル内でクラス名がユニークになる
+
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
