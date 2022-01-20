@@ -44,7 +44,12 @@ export default function Home({ allPostsData }) {
 // getStaticPropはNext.jsに外部データがあることを伝える
 // この例ではブログ記事をマークダウン形式で読み取り、オブジェクトにパースする
 // 取得したデータはキーをpropとするオブジェクト形式とすること
-export async function getStaticProps() {
+
+// サーバーサイドレンダリングSSRを使用するときはgetServerSidePropsとする
+// 外部データを取得するときに使用する
+// 引数として"context"を指定する
+//
+export async function getServerSideProps(context) {
   const allPostsData = getSortedPostsData();
   return {
     props: {
@@ -52,3 +57,7 @@ export async function getStaticProps() {
     },
   };
 }
+
+//SWR
+// Next.jsで用意されているHooks
+// クライアントサイドで取得したデータをキャッシュするために使用する
